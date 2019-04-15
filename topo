@@ -32,4 +32,5 @@ BPG离线安装：
 
 之前遇到什么问题啦？连接数据库失败，就是说没有成功连接到数据库。到时候导完数据库之后再看看怎么解决这个问题。
 https://www.cnblogs.com/chenjw-note/p/5887908.html
+会使用到的命令：GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '1q2w3e4r' WITH GRANT OPTION;
 是mysql没有开启远程连接
