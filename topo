@@ -10,22 +10,38 @@ TOPO离线安装：
   学习链接：https://blog.csdn.net/wangqiulin123456/article/details/39582269?_t_t_t=0.1561665523948924
   在线情况下的第二步是执行命令直接进行安装。
 3.进行环境安装
+   mysql安装
+        http://www.cnblogs.com/zhuyp1015/p/3561470.html
+   Neo4j安装
+        java安装实际上就是解压缩后，将环境变量添加上就可以了，添加成功后执行source ~/.bashrc，生成有效的文件。
+        neo4j数据库的端口是7474，要进行远程连接时要将开放0.0.0.0:7474打开，去除注释；
+        https://blog.csdn.net/u012318074/article/details/72793382
+        Neo4j环境变量修改，环境配置,运行看import/readme.md
+   Nodejs，npm安装
+        https://blog.csdn.net/u014361775/article/details/78865582
    1）.把安装包弄成光盘，进行导入，使用mount进行挂载，挂载之后想挂载新的，使用umount
    2）.挂载之后进行安装，安装环境 学习挂载：https://www.jb51.net/os/Ubuntu/440477.html
    学习nodejs：https://blog.csdn.net/sinat_30026065/article/details/80954595
    3）.不要忘记安装django
        运行命令：pip install --no-index --find-links=file:/root/mnt/python-pip-install/python_pack pymysql multiprocessing pytz threadpool datetime redis IPy networkx py-radix django==1.11.6 MySQL-python
-       安装Python环境
-4.拷贝代码
+       安装PythonDjangle环境
+       总共需要安装的环境有：
+       a.执行代码：apt-get install dpkg-dev apache2 libapache2-mod-php7.2 php7.2-gd php7.2-mysql php7.2-zip php7.2-mbstring php7.2-json php7.2-xml redis-server mysql-server mysql-client composer zlib1g-dev libbz2-dev libcurl4-openssl-dev libmysqld-dev nfs-kernel-server portmap nfs-common libcurl4 python-pip libmysqlclient-dev python-dev zlib1g-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev zlib1g-dev  python3-dev libpcap-dev libpq-dev python-pip openssh-server
+                  这个代码自动进行了环境的配置和安装。
+       b.安装java
+       c.安装neo4j
+       d.安装node
+       f.安装python djangle：pip install --no-index --find-links=file:/root/mnt/python-pip-install/python_pack pymysql multiprocessing pytz threadpool datetime redis IPy networkx py-radix django==1.11.6 MySQL-python
+4.拷贝代码（在虚拟机中可以使用光盘进行拷贝）
   1）.安装ssh服务，并且开启ssh，随后更改为root权限登录ssh
   2）.进行远程连接，在ssh中打开root
   3）.在ssh中复制代码到mnt文件夹
 5.修改参数
-  1）./website/config 数据库参数
-  2）./celery/database/mysql.config 数据库
-  3) ./celery/webapp/views.py   网页跳转
-  4) ./............./searchTool 数据库，网页
-  5）./............./html/home.html 
+  1）./topo_website/config.js 数据库参数
+  2）./topo_celery/web/database/mysql.config 数据库
+  3) ./topo_celery/web/webapp/views.py   网页跳转
+  4) ./topo_celery/web/webapp/searchTool 数据库，网页
+  5）./topo_celery/web/webapp/html/home.html 
   设置网页的顺序是什么？
   离线安装的环境不理想？现在应该是把环境配置完成了。
 6.启动网络
